@@ -66,6 +66,35 @@
  */
 ?>
 
+<script type="text/javascript">
+    (function($) {
+        $(document).ready(function(){
+          $(".toggler").click(function(){
+            $(this).next().slideToggle("slow");
+            return false;
+          }).next().hide();
+        });
+    })(jQuery);
+</script>
+
+
+<script>
+$(function() {
+// initialize tooltip
+$("#dyna img[title]").tooltip({
+
+   // tweak the position
+   offset: [10, 2],
+
+   // use the "slide" effect
+   effect: 'slide'
+
+// add dynamic plugin with optional configuration for bottom edge
+}).dynamic({ bottom: { direction: 'down', bounce: true } });
+});
+</script>
+
+
 <div id="page" class="page-default"> <a name="Top" id="Top"></a>
   <?php if($menu_bar = render($page['menu_bar'])): ?>
   <!-- MAIN NAV -->
